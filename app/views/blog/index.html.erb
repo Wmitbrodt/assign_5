@@ -1,1 +1,122 @@
-<h1>Index</h1>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm-8">
+            <%= image_tag("trolltunga.jpg", class: "img-responsive index-image") %>
+          </div>
+
+          <div class="col-sm-4">
+            <h3>Most liked</h3>
+              <a href="#"><%= Faker::Hipster.sentence(1) %></a>
+              <p><%= Faker::Hipster.sentence(1) %></p>
+
+          </div>
+        </div> <!-- row -->
+
+        <div class="row">
+          <div class="col-sm-8">
+            <h4>Post Title</h4>
+            <p>
+              <%= Faker::Hipster.paragraph %>
+            </p>
+          </div>
+        </div>
+
+      </div> <!-- container -->
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <a href="#" class="thumbnail">
+            <img src="<%= Faker::LoremPixel.image("350x200", false, 'sports') %>" alt="...">
+          </a>
+          <h2>
+            <%= Faker::Lorem.word %>
+          </h2>
+          <p>
+            <%= Faker::Lorem.sentence(16) %>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <img src="<%= Faker::LoremPixel.image("350x200", false, 'nightlife') %>" alt="">
+          <h2>
+            <%= Faker::Lorem.word %>
+          </h2>
+          <p>
+            <%= Faker::Lorem.sentence(16) %>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <img src="<%= Faker::LoremPixel.image("350x200", false, 'cats') %>" alt="">
+          <h2>
+            <%= Faker::Lorem.word %>
+          </h2>
+          <p>
+            <%= Faker::Lorem.sentence(16) %>
+          </p>
+        </div> <!-- row -->
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <img src="<%= Faker::LoremPixel.image("350x200", false, 'sports') %>" alt="">
+            <h2>
+              <%= Faker::Lorem.word %>
+            </h2>
+            <p>
+              <%= Faker::Lorem.sentence(16) %>
+            </p>
+          </div>
+          <div class="col-md-4">
+            <img src="<%= Faker::LoremPixel.image("350x200", false, 'nightlife') %>" alt="">
+            <h2>
+              <%= Faker::Lorem.word %>
+            </h2>
+            <p>
+              <%= Faker::Lorem.sentence(16) %>
+            </p>
+          </div>
+          <div class="col-md-4">
+            <img src="<%= Faker::LoremPixel.image("350x200", false, 'cats') %>" alt="">
+            <h2>
+              <%= Faker::Lorem.word %>
+            </h2>
+            <p>
+              <%= Faker::Lorem.sentence(16) %>
+            </p>
+          </div> <!-- row -->
+
+          <div class="row">
+            <div class="col-md-4">
+              <img src="<%= Faker::LoremPixel.image("350x200") %>" alt="">
+              <h2>
+                <%= Faker::Lorem.word %>
+              </h2>
+              <p>
+                <%= Faker::Lorem.sentence(16) %>
+              </p>
+            </div>
+            <div class="col-md-4">
+              <img src="<%= Faker::LoremPixel.image("350x200") %>" alt="">
+              <h2>
+                <%= Faker::Lorem.word %>
+              </h2>
+              <p>
+                <%= Faker::Lorem.sentence(16) %>
+              </p>
+            </div>
+            <div class="col-md-4">
+              <img src="<%= Faker::LoremPixel.image("350x200") %>" alt="">
+              <h2>
+                <%= Faker::Lorem.word %>
+              </h2>
+              <p>
+                <%= Faker::Lorem.sentence(16) %>
+              </p>
+            </div> <!-- row -->
+
+      </div>
