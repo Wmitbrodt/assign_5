@@ -7,16 +7,11 @@
 @import "font-awesome";
 
 
-.index-image {
-  height: auto;
-  width: auto;
-}
-
 .underline {
   border-bottom: thin solid black;
 }
 
-.recipe {
+.blog {
   background: white;
   border-radius: 5px;
   margin-bottom: 40px;
@@ -36,7 +31,7 @@
     }
   }
   h2 {
-    padding: 15px 5%;
+    padding: 0px 0 5px 0;
     margin: 0;
     font-size: 20px;
     font-weight: normal;
@@ -46,3 +41,32 @@
     }
   }
 }
+
+h5 {
+  letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(0,0,0,.8);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+body {
+  font-family: 'Della Respira', serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.date-name {
+  font-size: 12px;
+}
+
+
+
+/* blog show
+
+Georgia,Cambria,"Times New Roman",Times,serif;
+
+*/
