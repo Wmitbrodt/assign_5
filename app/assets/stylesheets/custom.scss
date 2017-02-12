@@ -6,15 +6,60 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+$green: rgb(2,184,117);
+$green-hover: rgb(0,171,107);
+$body: #fafafa!important;
+$navbar: #fff;
+
+@mixin transition($x) {
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -ms-transition: $x;
+  transition: $x;
+}
+
+body {
+  font-family: 'Della Respira', serif;
+  background: $body;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+}
+
+.date-name {
+  font-size: 12px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: $navbar;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+}
+
+/* Icons */
+
+  a, .fa-bookmark-o, .fa-heart-o {
+  color: $green;
+  @include transition(all 0.4s ease-in-out);
+  &:hover {
+    color: $green-hover;
+    }
+  }
+/*        */
 
 .underline {
   border-bottom: thin solid black;
 }
 
 .blog {
-  background: white;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
   border-radius: 5px;
   margin-bottom: 40px;
+  padding: 8px;
   .image_wrapper {
     max-width: 100%;
     border-radius: 5px 5px 0 0;
@@ -30,14 +75,25 @@
       transform: scale(1.075);
     }
   }
-  h2 {
+  h3 {
     padding: 0px 0 5px 0;
     margin: 0;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: normal;
     line-height: 1.5;
     a {
-      color: red;
+      color: $green;
+      @include transition(all 0.4s ease-in-out);
+      &:hover {
+        color: $green-hover;
+      }
+    }
+  }
+  a {
+    color: $green;
+    @include transition(all 0.4s ease-in-out);
+    &:hover {
+      color: $green-hover;
     }
   }
 }
@@ -49,18 +105,6 @@ h5 {
     color: rgba(0,0,0,.8);
     font-size: 18px;
     line-height: 1.4;
-}
-
-body {
-  font-family: 'Della Respira', serif;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: 'Roboto', sans-serif;
-}
-
-.date-name {
-  font-size: 12px;
 }
 
 
