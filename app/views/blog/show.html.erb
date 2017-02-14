@@ -1,38 +1,20 @@
 <div class="container">
   <div class="row">
-   <div class="col-xs-12 col-sm-10 col-md-8 col-md-push-2">
-     <h3>
-       <%= Faker::Lorem.word %>
-       <i class="fa fa-heart-o" aria-hidden="true"></i>
-
-
-         <%= Faker::Number.number(2) %> |
-         <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-
-     </h3>
-
-
-   </div> <!-- col -->
-  </div> <!-- row -->
-
-
-  <div class="row">
-   <div class="col-xs-12 col-sm-10 col-md-8 col-md-push-2">
-     <h5>
+   <div class="col-xs-8 col-sm-8 col-md-8 col-md-push-2">
+     <h4>
        <span>
-         <i class="fa fa-heart-o" aria-hidden="true"></i>
+         <%= Faker::Lorem.word %>
        </span>
-       <%= Faker::Number.number(2) %>
-     </h5>
+     </h4>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-pull-2">
-      <h5 style="float: right;">
+    <div class="col-xs-4 col-sm-4 col-sm-pull-2">
+      <h4 style="float: right;">
         <span>
           <i class="fa fa-heart-o" aria-hidden="true"></i>
-          <%= Faker::Number.number(2) %> |
+          <%= Faker::Number.number(3) %> |
           <i class="fa fa-bookmark-o" aria-hidden="true"></i>
         </span>
-      </h5>
+      </h4>
     </div> <!-- col -->
   </div> <!-- row -->
 
@@ -87,443 +69,66 @@
           <%= Faker::Lorem.paragraph(10) %>
         </p>
 
-        <p>
+        <br>
+        <div class="row">
+         <div class="col-xs-8 col-sm-8 col-md-8">
+           <h4>
+             <span>
+               <%= Faker::Lorem.word %>
+             </span>
+           </h4>
+          </div>
+          <div class="col-xs-4 col-sm-4">
+            <h4 style="float: right;">
+              <span>
+                    <%= Faker::Date.backward(14) %>
+              </span>
+            </h4>
+          </div> <!-- col -->
+        </div> <!-- row --> <br>
+
+        <div class="row">
+         <div class="col-xs-4 col-sm-4">
+           <div class="blog">
+             <div class="image_wrapper">
+                 <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
+             </div>
+           </div>
+         </div>
+
+         <div class="col-xs-8 col-sm-5">
+          <h4>
+            <u>
+              <%= Faker::Name.name %>
+            </u>
+          </h4>
+          <p>
+            <%= Faker::Lorem.sentence(7) %>
+          </p>
+         </div>
+        </div> <!-- row -->
+
+        <div class="row">
+          <div class="col-sm-8 col-sm-push-1">
+            <form method="post" action>
+          <h4 id="border-box">Leave a comment...</h4>
+
+          <div class="form-group form-group-lg">
+            <input type="text" id="tweet" name="tweet" value="" placeholder="comments here..." class="form-control input-lg" maxlength="255"> <!--  restricted to a length of 255 characters -->
+          </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-10 col-md-8 col-md-push-2">
-              <a href="#" class="date-name">
-                <u><%= Faker::Name.name %></u>
-              </a>
-            </p>
-            <p class="date-name">
-                <%= Faker::Date.backward(14) %>
-            </p>
+            <div class="col-xs-6 col-xs-push-8 col-sm-push-9 col-md-push-9 col-lg-push-10">
+              <div>
+                <input type="text" class="form-control" placeholder="your name">
+              </div>
             </div>
           </div>
-      </div>
-  </div> <!-- row -->
+         </form>
 
-</div> <!-- container -->
-
-
-<div class="container">
-
-<div class="row">
-
-  <div class="col-md-4">
-    <div class="blog">
-      <div class="image_wrapper">
-          <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-      </div>
-      <div class="row">
-       <div class="col-xs-8">
-         <h5>
-           <span>
-             <i class="fa fa-heart-o" aria-hidden="true"></i>
-           </span>
-           <%= Faker::Number.number(2) %>
-         </h5>
+          </div>
         </div>
-        <div class="col-xs-4">
-          <h5 style="float: right;">
-            <span>
-              <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-            </span>
-          </h5>
-        </div> <!-- col -->
-      </div> <!-- row -->
 
-      <div class="row">
-        <div class="col-sm-12">
-          <h3>
-            <%= Faker::Lorem.word %>
-          </h3>
-        </div>
-      </div>
 
-      <p>
-        <%= Faker::Lorem.sentence(12) %>
-      </p>
-
-      <p>
-        <a href="#" class="date-name">
-          <u><%= Faker::Name.name %></u>
-        </a>
-      </p>
-      <p class="date-name">
-          <%= Faker::Date.backward(14) %>
-      </p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="blog">
-      <div class="image_wrapper">
-          <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-      </div>
-      <div class="row">
-       <div class="col-xs-8">
-         <h5>
-           <span>
-             <i class="fa fa-heart-o" aria-hidden="true"></i>
-           </span>
-           <%= Faker::Number.number(2) %>
-         </h5>
-        </div>
-        <div class="col-xs-4">
-          <h5 style="float: right;">
-            <span>
-              <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-            </span>
-          </h5>
-        </div> <!-- col -->
-      </div> <!-- row -->
-
-      <div class="row">
-        <div class="col-sm-12">
-          <h3>
-            <%= Faker::Lorem.word %>
-          </h3>
-        </div>
-      </div>
-
-      <p>
-        <%= Faker::Lorem.sentence(12) %>
-      </p>
-
-      <p>
-        <a href="#" class="date-name">
-          <u><%= Faker::Name.name %></u>
-        </a>
-      </p>
-      <p class="date-name">
-          <%= Faker::Date.backward(14) %>
-      </p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="blog">
-      <div class="image_wrapper">
-          <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-      </div>
-      <div class="row">
-       <div class="col-xs-8">
-         <h5>
-           <span>
-             <i class="fa fa-heart-o" aria-hidden="true"></i>
-           </span>
-           <%= Faker::Number.number(2) %>
-         </h5>
-        </div>
-        <div class="col-xs-4">
-          <h5 style="float: right;">
-            <span>
-              <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-            </span>
-          </h5>
-        </div> <!-- col -->
-      </div> <!-- row -->
-
-      <div class="row">
-        <div class="col-sm-12">
-          <h3>
-            <%= Faker::Lorem.word %>
-          </h3>
-        </div>
-      </div>
-
-      <p>
-        <%= Faker::Lorem.sentence(12) %>
-      </p>
-
-      <p>
-        <a href="#" class="date-name">
-          <u><%= Faker::Name.name %></u>
-        </a>
-      </p>
-      <p class="date-name">
-          <%= Faker::Date.backward(14) %>
-      </p>
-    </div>
-  </div>
-
-</div> <!-- row -->
-
-<div class="row">
-
-<div class="col-md-4">
-  <div class="blog">
-    <div class="image_wrapper">
-        <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-    </div>
-    <div class="row">
-     <div class="col-xs-8">
-       <h5>
-         <span>
-           <i class="fa fa-heart-o" aria-hidden="true"></i>
-         </span>
-         <%= Faker::Number.number(2) %>
-       </h5>
-      </div>
-      <div class="col-xs-4">
-        <h5 style="float: right;">
-          <span>
-            <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-          </span>
-        </h5>
-      </div> <!-- col -->
     </div> <!-- row -->
-
-    <div class="row">
-      <div class="col-sm-12">
-        <h3>
-          <%= Faker::Lorem.word %>
-        </h3>
-      </div>
-    </div>
-
-    <p>
-      <%= Faker::Lorem.sentence(12) %>
-    </p>
-
-    <p>
-      <a href="#" class="date-name">
-        <u><%= Faker::Name.name %></u>
-      </a>
-    </p>
-    <p class="date-name">
-        <%= Faker::Date.backward(14) %>
-    </p>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="blog">
-    <div class="image_wrapper">
-        <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-    </div>
-    <div class="row">
-     <div class="col-xs-8">
-       <h5>
-         <span>
-           <i class="fa fa-heart-o" aria-hidden="true"></i>
-         </span>
-         <%= Faker::Number.number(2) %>
-       </h5>
-      </div>
-      <div class="col-xs-4">
-        <h5 style="float: right;">
-          <span>
-            <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-          </span>
-        </h5>
-      </div> <!-- col -->
-    </div> <!-- row -->
-
-    <div class="row">
-      <div class="col-sm-12">
-        <h3>
-          <%= Faker::Lorem.word %>
-        </h3>
-      </div>
-    </div>
-
-    <p>
-      <%= Faker::Lorem.sentence(12) %>
-    </p>
-
-    <p>
-      <a href="#" class="date-name">
-        <u><%= Faker::Name.name %></u>
-      </a>
-    </p>
-    <p class="date-name">
-        <%= Faker::Date.backward(14) %>
-    </p>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="blog">
-    <div class="image_wrapper">
-        <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-    </div>
-    <div class="row">
-     <div class="col-xs-8">
-       <h5>
-         <span>
-           <i class="fa fa-heart-o" aria-hidden="true"></i>
-         </span>
-         <%= Faker::Number.number(2) %>
-       </h5>
-      </div>
-      <div class="col-xs-4">
-        <h5 style="float: right;">
-          <span>
-            <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-          </span>
-        </h5>
-      </div> <!-- col -->
-    </div> <!-- row -->
-
-    <div class="row">
-      <div class="col-sm-12">
-        <h3>
-          <%= Faker::Lorem.word %>
-        </h3>
-      </div>
-    </div>
-
-    <p>
-      <%= Faker::Lorem.sentence(12) %>
-    </p>
-
-    <p>
-      <a href="#" class="date-name">
-        <u><%= Faker::Name.name %></u>
-      </a>
-    </p>
-    <p class="date-name">
-        <%= Faker::Date.backward(14) %>
-    </p>
-  </div>
-</div>
-
-</div> <!-- row -->
-
-<div class="row">
-
-<div class="col-md-4">
-<div class="blog">
-  <div class="image_wrapper">
-      <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-  </div>
-  <div class="row">
-   <div class="col-xs-8">
-     <h5>
-       <span>
-         <i class="fa fa-heart-o" aria-hidden="true"></i>
-       </span>
-       <%= Faker::Number.number(2) %>
-     </h5>
-    </div>
-    <div class="col-xs-4">
-      <h5 style="float: right;">
-        <span>
-          <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-        </span>
-      </h5>
-    </div> <!-- col -->
-  </div> <!-- row -->
-
-  <div class="row">
-    <div class="col-sm-12">
-      <h3>
-        <%= Faker::Lorem.word %>
-      </h3>
-    </div>
-  </div>
-
-  <p>
-    <%= Faker::Lorem.sentence(12) %>
-  </p>
-
-  <p>
-    <a href="#" class="date-name">
-      <u><%= Faker::Name.name %></u>
-    </a>
-  </p>
-  <p class="date-name">
-      <%= Faker::Date.backward(14) %>
-  </p>
-</div>
-</div>
-<div class="col-md-4">
-<div class="blog">
-  <div class="image_wrapper">
-      <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-  </div>
-  <div class="row">
-   <div class="col-xs-8">
-     <h5>
-       <span>
-         <i class="fa fa-heart-o" aria-hidden="true"></i>
-       </span>
-       <%= Faker::Number.number(2) %>
-     </h5>
-    </div>
-    <div class="col-xs-4">
-      <h5 style="float: right;">
-        <span>
-          <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-        </span>
-      </h5>
-    </div> <!-- col -->
-  </div> <!-- row -->
-
-  <div class="row">
-    <div class="col-sm-12">
-      <h3>
-        <%= Faker::Lorem.word %>
-      </h3>
-    </div>
-  </div>
-
-  <p>
-    <%= Faker::Lorem.sentence(12) %>
-  </p>
-
-  <p>
-    <a href="#" class="date-name">
-      <u><%= Faker::Name.name %></u>
-    </a>
-  </p>
-  <p class="date-name">
-      <%= Faker::Date.backward(14) %>
-  </p>
-</div>
-</div>
-<div class="col-md-4">
-<div class="blog">
-  <div class="image_wrapper">
-      <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-  </div>
-  <div class="row">
-   <div class="col-xs-8">
-     <h5>
-       <span>
-         <i class="fa fa-heart-o" aria-hidden="true"></i>
-       </span>
-       <%= Faker::Number.number(2) %>
-     </h5>
-    </div>
-    <div class="col-xs-4">
-      <h5 style="float: right;">
-        <span>
-          <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-        </span>
-      </h5>
-    </div> <!-- col -->
-  </div> <!-- row -->
-
-  <div class="row">
-    <div class="col-sm-12">
-      <h3>
-        <%= Faker::Lorem.word %>
-      </h3>
-    </div>
-  </div>
-
-  <p>
-    <%= Faker::Lorem.sentence(12) %>
-  </p>
-
-  <p>
-    <a href="#" class="date-name">
-      <u><%= Faker::Name.name %></u>
-    </a>
-  </p>
-  <p class="date-name">
-      <%= Faker::Date.backward(14) %>
-  </p>
-</div>
-</div>
-</div> <!-- row -->
 
 </div> <!-- container -->
