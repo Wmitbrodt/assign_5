@@ -15,6 +15,9 @@
 
     <%= yield %>
 
-    <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' unless current_page?(show_path) %>
+    <%= render 'layouts/footer_show' unless current_page?('/') %>
+
+
   </body>
 </html>
