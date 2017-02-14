@@ -10,6 +10,7 @@ $green: rgb(2,184,117);
 $green-hover: rgb(0,171,107);
 $body: #fafafa!important;
 $navbar: #fff;
+$medium: rgba(0,0,0,.8);
 
 @mixin transition($x) {
   -webkit-transition: $x;
@@ -33,6 +34,7 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: 'Roboto', sans-serif;
   text-transform: capitalize;
+  color: rgba(0,0,0,.8);
 }
 
 p {
@@ -43,7 +45,7 @@ p {
     letter-spacing: -.003em;
 }
 
-a {
+#most-liked {
   font-size: 14px;
   line-height: 1.00;
 }
@@ -60,7 +62,7 @@ a {
 
 /* Icons */
 
-  a, .fa-bookmark-o, .fa-heart-o {
+.fa-bookmark-o, .fa-heart-o {
   color: $green;
   @include transition(all 0.4s ease-in-out);
   &:hover {
@@ -98,7 +100,7 @@ a {
     font-size: 24px;
     font-weight: normal;
     line-height: 1.5;
-    a {
+    u {
       color: $green;
       @include transition(all 0.4s ease-in-out);
       &:hover {
@@ -107,11 +109,20 @@ a {
     }
   }
   a {
-    color: $green;
+    color: $medium;
     @include transition(all 0.4s ease-in-out);
     &:hover {
       color: $green-hover;
     }
+  }
+}
+
+a {
+  color: $medium;
+  @include transition(all 0.4s ease-in-out);
+  &:hover {
+    color: $green;
+    text-decoration: none;
   }
 }
 

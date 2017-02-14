@@ -7,7 +7,7 @@
           <div class="col-sm-8">
             <div class="blog">
               <div class="image_wrapper">
-                  <img src="http://www.travelzoo.com/uk/blog/wp-content/uploads/2016/04/tzoo.blog_.uk_.Trolltunga.jpg" alt="">
+                  <a href="/show"><img src="http://www.travelzoo.com/uk/blog/wp-content/uploads/2016/04/tzoo.blog_.uk_.Trolltunga.jpg" alt=""></a>
               </div>
               <div class="row">
                <div class="col-xs-8">
@@ -30,18 +30,18 @@
               <div class="row">
                 <div class="col-sm-12">
                   <h3>
-                    <%= Faker::Lorem.word %>
+                    <a href="/show"><%= Faker::Lorem.word %></a>
                   </h3>
                 </div>
               </div>
 
               <p>
-                <%= Faker::Lorem.sentence(12) %>
+                <a href="/show"><%= Faker::Lorem.sentence(12) %></a>
               </p>
 
               <p>
                 <a href="#" class="date-name">
-                  <u><%= Faker::Name.name %></u>
+                  <a href="/show"><u><%= Faker::Name.name %></u></a>
                 </a>
               </p>
               <p class="date-name">
@@ -52,12 +52,12 @@
 
           <div class="col-sm-4">
             <h3>Most liked</h3>
-              <p><a href="#"><u><%= Faker::Hipster.sentence(1) %></u></a></p>
-              <p><a href="#"><u><%= Faker::Hipster.sentence(1) %></u></a></p>
-              <p><a href="#"><u><%= Faker::Hipster.sentence(1) %></u></a></p>
-              <p><a href="#"><u><%= Faker::Hipster.sentence(1) %></u></a></p>
-              <p><a href="#"><u><%= Faker::Hipster.sentence(1) %></u></a></p>
-              <p><a href="#"><u><%= Faker::Hipster.sentence(1) %></u></a></p>
+              <p><a href="#"><u id="most-liked"><%= Faker::Hipster.sentence(1) %></u></a></p>
+              <p><a href="#"><u id="most-liked"><%= Faker::Hipster.sentence(1) %></u></a></p>
+              <p><a href="#"><u id="most-liked"><%= Faker::Hipster.sentence(1) %></u></a></p>
+              <p><a href="#"><u id="most-liked"><%= Faker::Hipster.sentence(1) %></u></a></p>
+              <p><a href="#"><u id="most-liked"><%= Faker::Hipster.sentence(1) %></u></a></p>
+              <p><a href="#"><u id="most-liked"><%= Faker::Hipster.sentence(1) %></u></a></p>
           </div>
         </div> <!-- row -->
 
