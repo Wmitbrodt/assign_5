@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get '/' => 'blog#index'
+  root 'posts#index'
 
-  get '/show' => 'blog#show'
+  resources :posts, shallow: true do
 
-  get '/about' => 'blog#about'
+    resources :comments, only: [:create, :destroy]
+  end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
