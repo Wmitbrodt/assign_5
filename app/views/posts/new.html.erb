@@ -1,24 +1,19 @@
-<h1>new post</h1>
-
-<p><%= @post.errors.full_messages.join(',') %></p>
-<%= form_for @post do |f| %>
-
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
-
-  <div>
-    <%= f.label :category_id %>
-     <%= f.collection_select :category_id, Category.all, :id, :name %>
-  </div>
 
 
-  <%= f.submit %>
 
-<% end %>
+<div class="row">
+ <div class="col-sm-8 col-sm-push-1">
+   <p><%= @post.errors.full_messages.join(',') %></p>
+  <h4 id="border-box">Create a Post...</h4>
+   <%= form_for [@post] do |f| %>
+   <%= f.text_field :title, class: 'form-control', placeholder: "Your title..." %> <br>
+  <div class="form-group form-group-lg">
+
+     <%= f.text_area :body, class: 'form-control', placeholder: "Your awesome post..."%>
+
+     <%= f.collection_select :category_id, Category.all, :id, :name, class: 'form-control' %>
+     <%= f.submit 'send', class: 'btn btn-lg btn-custom' %>
+   </div>
+   <% end %>
+ </div>
+</div>

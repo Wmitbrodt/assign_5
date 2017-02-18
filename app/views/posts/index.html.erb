@@ -5,7 +5,7 @@
           <div class="col-sm-8">
             <div class="blog">
               <div class="image_wrapper">
-                  <a href="/posts/1"><img src="http://www.travelzoo.com/uk/blog/wp-content/uploads/2016/04/tzoo.blog_.uk_.Trolltunga.jpg" alt=""></a>
+                  <img src="http://www.travelzoo.com/uk/blog/wp-content/uploads/2016/04/tzoo.blog_.uk_.Trolltunga.jpg" alt="">
               </div>
               <div class="row">
                <div class="col-xs-8">
@@ -36,7 +36,7 @@
               </div>
 
               <p>
-                <%= link_to p.body, post_path(p) %>
+                <%= link_to p.body[0..200], post_path(p) %>...
               </p>
 
               <p>
@@ -45,7 +45,7 @@
                 </a>
               </p>
               <p class="date-name">
-                  <%= Faker::Date.backward(14) %>
+                  <%= p.created_at.strftime("%Y-%m-%d") %>
               </p>
             </div>
           </div>
@@ -100,10 +100,10 @@
             </div>
 
 
-              <% if p.body.length >= 10 %>
-                <p><%= p.body[0..15] %>...</p>
+              <% if p.body.length >= 25 %>
+                <p><%= link_to p.body[0..25], post_path(p) %>...</p>
               <% else %>
-                <p><%= p.body %></p>
+                <p><%= link_to p.body, post_path(p) %></p>
               <% end %>
 
 
@@ -113,7 +113,7 @@
               </a>
             </p>
             <p class="date-name">
-                <%= Faker::Date.backward(14) %>
+                <%= p.created_at.strftime("%Y-%m-%d") %>
             </p>
           </div>
         </div>
