@@ -21,9 +21,6 @@
 </div> <!-- container -->
 
 <div class = "jumbotron">
-
-
-
 </div>
 
 
@@ -77,212 +74,70 @@
          </div>
         </div> <!-- row -->
 
-        
+
       <div class="row">
-        <div class="col-sm-8 col-sm-push-1">
+       <div class="col-sm-8 col-sm-push-1">
         <h4 id="border-box">Leave a comment...</h4>
          <%= form_for [@post, @comment] do |f| %>
         <div class="form-group form-group-lg">
-		       <%= f.text_area :body, class: 'form-control', placeholder: "Your amazing comment"%>
-			     <%= f.submit %> <!-- input tags -->
+		       <%= f.text_area :body, class: 'form-control', placeholder: "Your amazing comment..."%>
+			     <%= f.submit 'send', class: 'btn btn-lg btn-custom' %>
 		     </div>
          <% end %>
-
-        <%#<div class="row">
-          <div class="col-md-3 col-xs-4">
-            <h4>Full Name</h4>
-          </div>
-          <div class="col-md-9 col-xs-8">
-            <div>
-              <input type="text" class="form-control" placeholder="your name">
-            </div>
-          </div>
-        </div>
-       </form>
-      </div>
-    </div> %>
-
-
-
+       </div>
+     </div>
 
       <br><hr><br>
 
-
       <div class="row">
-       <div class="col-xs-4 col-sm-3">
-         <div class="blog">
-           <div class="image_wrapper">
-               <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
+        <div class="col-sm-12">
+          <%= @comment.errors.full_messages.join(', ') %>
+
+          <% @post.comments.each do |com| %>
+          <div class="row">
+           <div class="col-xs-4 col-sm-3">
+             <div class="blog">
+               <div class="image_wrapper">
+                   <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
+               </div>
+             </div>
            </div>
-         </div>
-       </div>
 
-       <div class="col-xs-8 col-sm-9">
-        <p>
-          <%= Faker::Lorem.paragraph(6) %>
-        </p>
-       </div>
-      </div> <!-- row -->
-
-      <div class="row">
-       <div class="col-xs-8 col-sm-8 col-md-8">
-         <h4>
-           <span>
-             <%= Faker::Name.name %>
-           </span>
-         </h4>
-        </div>
-        <div class="col-xs-4 col-sm-4">
-          <h4 style="float: right;">
-            <span>
-                  <%= Faker::Date.backward(14) %>
-            </span>
-          </h4>
-        </div> <!-- col -->
-      </div> <!-- row -->
-      <br><br>
-
-      <div class="row">
-       <div class="col-xs-4 col-sm-3">
-         <div class="blog">
-           <div class="image_wrapper">
-               <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
+           <div class="col-xs-8 col-sm-9">
+            <p>
+              <%= com.body %>
+            </p>
            </div>
-         </div>
-       </div>
+          </div> <!-- row -->
 
-       <div class="col-xs-8 col-sm-9">
-        <p>
-          <%= Faker::Lorem.paragraph(6) %>
-        </p>
-       </div>
+          <div class="row">
+           <div class="col-xs-8 col-sm-8 col-md-8">
+             <h4>
+               <span>
+                 <%= Faker::Name.name %>
+               </span>
+             </h4>
+            </div>
+            <div class="col-xs-4 col-sm-4">
+              <h4 style="float: right;">
+                <span>
+                      <%= Faker::Date.backward(14) %>
+                </span>
+              </h4>
+            </div> <!-- col -->
+          </div> <!-- row -->
+          <%= link_to 'delete', comment_path(com),
+                                  method: :delete,
+                                  data: { confirm: 'Are you sure?'} %>
+
+            <hr>
+          <% end %>
       </div> <!-- row -->
-
-      <div class="row">
-       <div class="col-xs-8 col-sm-8 col-md-8">
-         <h4>
-           <span>
-             <%= Faker::Name.name %>
-           </span>
-         </h4>
-        </div>
-        <div class="col-xs-4 col-sm-4">
-          <h4 style="float: right;">
-            <span>
-                  <%= Faker::Date.backward(14) %>
-            </span>
-          </h4>
-        </div> <!-- col -->
-      </div> <!-- row -->
-
-      <br><br>
-
-      <div class="row">
-       <div class="col-xs-4 col-sm-3">
-         <div class="blog">
-           <div class="image_wrapper">
-               <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-           </div>
-         </div>
-       </div>
-
-       <div class="col-xs-8 col-sm-9">
-        <p>
-          <%= Faker::Lorem.paragraph(6) %>
-        </p>
-       </div>
-      </div> <!-- row -->
-
-      <div class="row">
-       <div class="col-xs-8 col-sm-8 col-md-8">
-         <h4>
-           <span>
-             <%= Faker::Name.name %>
-           </span>
-         </h4>
-        </div>
-        <div class="col-xs-4 col-sm-4">
-          <h4 style="float: right;">
-            <span>
-                  <%= Faker::Date.backward(14) %>
-            </span>
-          </h4>
-        </div> <!-- col -->
-      </div> <!-- row -->
-
-      <br><br>
-
-      <div class="row">
-       <div class="col-xs-4 col-sm-3">
-         <div class="blog">
-           <div class="image_wrapper">
-               <img src="https://pbs.twimg.com/profile_images/608008626897166337/JLoiFMIw.jpg" alt="">
-           </div>
-         </div>
-       </div>
-
-       <div class="col-xs-8 col-sm-9">
-        <p>
-          <%= Faker::Lorem.paragraph(6) %>
-        </p>
-       </div>
-      </div> <!-- row -->
-
-      <div class="row">
-       <div class="col-xs-8 col-sm-8 col-md-8">
-         <h4>
-           <span>
-             <%= Faker::Name.name %>
-           </span>
-         </h4>
-        </div>
-        <div class="col-xs-4 col-sm-4">
-          <h4 style="float: right;">
-            <span>
-                  <%= Faker::Date.backward(14) %>
-            </span>
-          </h4>
-        </div> <!-- col -->
-      </div> <!-- row -->
-
-
-
-    </div> <!-- row -->
-
 </div> <!-- container -->
+<br><br><br>
 
-<h1>Posts</h1>
-
-
-<h1><%= @post.title %></h1>
-<p>body: <%= @post.body %></p>
-<p>category: <%= @post.category.name %></p>
-
-
-
-
-<%= link_to 'Edit', edit_post_path(@post) %>
-<%= link_to 'Delete', post_path(@post),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %>
-
-<hr>
-
-<h2>Comments</h2>
-<h3>Create a new comment!</h3>
-
-
-<%= form_for [@post, @comment] do |f| %>
-  <%= f.text_area :body %>
-  <%= f.submit %>
-<% end %>
-
-<hr>
-<%= @comment.errors.full_messages.join(', ') %>
-<% @post.comments.each do |com| %>
-  <%= com.body %>
-  <%= link_to 'delete', comment_path(com),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?'} %>
-  <hr>
-<% end %>
+<div class="container">
+  <div class="text-center center-block">
+    <h4><a href="#"><u>More Comments</u></a></h4>
+  </div>
+</div>
