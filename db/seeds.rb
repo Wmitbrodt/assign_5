@@ -8,6 +8,6 @@
 
 5.times do |n|
 
-  c = Category.create( name: Faker::Beer.name)
+  c = Category.create( name: Faker::StarWars.planet)
   puts "Creating Category #{c.name}..."
 end

@@ -94,14 +94,14 @@
             <div class="row">
               <div class="col-sm-12">
                 <h3>
-                  <%= link_to p.title, post_path(p) %>
+                  <%= link_to p.title[0..25], post_path(p) %>...
                 </h3>
               </div>
             </div>
 
 
               <% if p.body.length >= 25 %>
-                <p><%= link_to p.body[0..25], post_path(p) %>...</p>
+                <p><%= link_to p.body[0..30], post_path(p) %>...</p>
               <% else %>
                 <p><%= link_to p.body, post_path(p) %></p>
               <% end %>
