@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.3.3'
 
 gem 'rails', '~> 5.0.1'
 gem 'bootstrap-sass', '3.3.6'
@@ -18,7 +19,10 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'font-awesome-sass', '~> 4.6', '>= 4.6.2'
 gem 'faker', '~> 1.7', '>= 1.7.3'
-
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+gem 'rails-erd'
+gem 'cancancan'
 
 
 group :development, :test do

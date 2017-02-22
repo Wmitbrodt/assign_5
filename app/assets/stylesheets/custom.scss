@@ -56,6 +56,11 @@ p {
 }
 
 /* Navbar */
+.nav > li {
+    position: relative;
+    display: block;
+    padding-top: 15px;
+}
 .navbar {
   background-color: $navbar;
   box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
@@ -79,6 +84,17 @@ p {
     color: #fff;
     background-color: $blue;
   }
+}
+
+@media (min-width: 768px) {
+
+.navbar-nav > li > a {
+    padding-top: 0;
+    padding-bottom: 15px;
+  }
+}
+.drop-down {
+  padding-top: 0px;
 }
 
 /* over ride bootstrap navbar media queries */
