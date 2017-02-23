@@ -7,12 +7,14 @@ class PostsController < ApplicationController
 
   def create
     post_params = params.require(:post).permit([:title, :body, :category_id])
+    @post = Post.new(post_params)
     @post.user = current_user
 
     if @post.save
-
+      flash[:notice] = "Post Created"
       redirect_to post_path(@post)
     else
+      flash.now[:alert] = 'Please fix errors below'
 
       render :new
     end
