@@ -49,4 +49,12 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+    private
+
+    def authorize
+      if cannot?(:manage, @post)
+        redirect_to root_path, alert: 'Not authorized!'
+      end
+    end
+
 end
