@@ -10,7 +10,7 @@ def create
 
       redirect_to root_path, notice: 'Signed In!'
     else
-      flash.new[:alert] = 'Wrong Credentials'
+      flash.now[:alert] = 'Wrong Credentials'
       render :new
     end
 end

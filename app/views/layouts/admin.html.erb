@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Della+Respira|Roboto" rel="stylesheet">
+  </head>
+
+  <body>
+    
+
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/show' unless current_page?(root_path) %>
+    <div class="container">
+
+
+    <%= yield %>
+</div>
+    <%= render 'layouts/footer' %>
+
+
+
+  </body>
+</html>
