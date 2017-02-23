@@ -48,9 +48,11 @@
         </form>
         <% if user_signed_in? %>
           <li>Hello <%= current_user.full_name %></li>
+          <%= link_to 'Sign out', sessions_path, method: :delete %>
           <% else %>
           <li>You're not signed in</li>
           <li><%= link_to 'Sign up', new_user_path %></li>
+          <li><%= link_to 'Sign in', new_session_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

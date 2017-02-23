@@ -23,6 +23,8 @@ default: &default
 
 development:
   <<: *default
+  # To create a new database, go to Terminal and run:
+  # createdb -U williammitbrodt CHANGEME
   database: blog_development
 
   # The specified database role being used to connect to postgres.

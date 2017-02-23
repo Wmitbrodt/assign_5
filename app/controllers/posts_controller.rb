@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:show, :index]
 
   def new
     @post = Post.new(created_at: :desc)
@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def create
     post_params = params.require(:post).permit([:title, :body, :category_id])
-    @post  = Post.new(post_params)
+    @post.user = current_user
 
     if @post.save
 
