@@ -41,7 +41,7 @@
 
               <p>
                 <a href="#" class="date-name">
-                  <u><%= Faker::Name.name %></u>
+                  <u><%= p.user.full_name %></u>
                 </a>
               </p>
               <p class="date-name">
@@ -104,12 +104,12 @@
                 <p><%= link_to p.body[0..30], post_path(p) %>...</p>
               <% else %>
                 <p><%= link_to p.body, post_path(p) %></p>
-              <% end %>
+
 
 
             <p>
               <a href="#" class="date-name">
-                <u><%= Faker::Name.name %></u>
+                <u><%= p.user.full_name %></u>
               </a>
             </p>
             <p class="date-name">
@@ -119,7 +119,7 @@
         </div>
 
 
-
+      <% end %>
 
 
      <% end %>
