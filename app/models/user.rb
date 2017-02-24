@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Rails.application.routes.url_helpers
   has_secure_password
   has_many :posts, dependent: :nullify
 
