@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Rails.application.routes.url_helpers
   has_secure_password
   has_many :posts, dependent: :nullify
 
@@ -13,11 +14,11 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}".strip.titleize
   end
 
-  private
+    private
 
-  def downcase_email
-    self.email&.downcase!
-  end
+    def downcase_email
+      self.email&.downcase!
+    end
 
 
 end

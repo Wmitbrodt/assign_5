@@ -39,10 +39,10 @@
                 <%= link_to p.body[0..200], post_path(p) %>...
               </p>
 
-              <p>
-                <a href="#" class="date-name">
-                  <u><%= Faker::Name.name %></u>
-                </a>
+              <p class="date-name">
+                  <u>
+                    <%= p.user.full_name %>
+                  </u>
               </p>
               <p class="date-name">
                   <%= p.created_at.strftime("%Y-%m-%d") %>
@@ -104,14 +104,15 @@
                 <p><%= link_to p.body[0..30], post_path(p) %>...</p>
               <% else %>
                 <p><%= link_to p.body, post_path(p) %></p>
-              <% end %>
+
+                <p class="date-name">
+                    <u>
+                      <%= p.user.full_name %>
+                    </u>
+               </p>
 
 
-            <p>
-              <a href="#" class="date-name">
-                <u><%= Faker::Name.name %></u>
-              </a>
-            </p>
+
             <p class="date-name">
                 <%= p.created_at.strftime("%Y-%m-%d") %>
             </p>
@@ -119,8 +120,7 @@
         </div>
 
 
-
-
+      <% end %>
 
      <% end %>
     <% end %>
