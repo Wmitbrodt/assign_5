@@ -30,6 +30,19 @@ class UsersController < ApplicationController
     end
   end
 
+  # def change_password
+  #   # step 1: verify with user.authenticate, pass in params and current password
+  #   user = User.find_by_email params[:email]
+  #   if user&.authenticate(params[:password])
+  #   session[:user_id] = user.id
+  #   # step 2: make sure the new pass = to new_pass_confirmation (string comparison)
+  #
+  #   # step 3: simply user update to change pass field
+  # if @user.update_attributes(user_params)
+  #   flash.now[:success] = "Profile updated"
+  #   redirect_to root_path
+  # end
+
      private
 
      def user_params
