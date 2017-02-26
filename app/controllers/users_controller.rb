@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :correct_user,  only: [:edit, :update]
+  before_action :authenticate_user!, only:[:edit]
 
 
   def new
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
    def update
      @user = User.find params[:id]
+     user_params
      if @user.update_attributes(user_params)
        flash.now[:success] = "Profile updated"
        redirect_to root_path
@@ -53,10 +54,12 @@ class UsersController < ApplicationController
                                     :password_confirmation)
      end
 
-    #  def correct_user
-    #   @user = User.find(params[:id])
-    #   redirect_to(root_url) unless @user == current_user
-    # end
+     def authorize
+       @user = User.find params[:id]
+       if cannot?(:manage, @user)
+         redirect_to root_path,notice:'You can\'t edit another user!'
+       end
+     end
 
 
 
