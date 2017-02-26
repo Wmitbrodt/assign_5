@@ -109,19 +109,27 @@
               </h4>
             </div> <!-- col -->
           </div> <!-- row -->
-          <% if can?(:manage, @post) %>
+          <% if can?(:manage, @post, com) %>
           <%= link_to 'delete', comment_path(com),
                                   method: :delete,
                                   data: { confirm: 'Are you sure?'} %>
 
-              <% if com != @post.comments.last %>
-                <hr /> <!-- underline all posts, except last one -->
-              <% end %>
-
             <% end %> <!-- if can? -->
+
+            <% if com != @post.comments.last %>
+              <hr /> <!-- underline all posts, except last one -->
+            <% end %>
 
           <% end %>
 
+
+
+          <% if @post.comments %>
+            <h4 class='text-center center-block'>
+              <%= link_to 'More Comments'%>
+
+            </h4>
+           <%end%>
     </div>
   </div>
 </div> <!-- container -->

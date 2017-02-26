@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   include Rails.application.routes.url_helpers
   has_secure_password
+
   has_many :posts, dependent: :nullify
+  has_many :comments, dependent: :nullify
 
   before_save :downcase_email
 

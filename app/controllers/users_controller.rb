@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only:[:edit]
-
+  before_action :authorize, only: [:edit,:update]
 
   def new
     @user = User.new

@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
 
   belongs_to :post
-  # has_many :comments, dependent: :destroy
+  belongs_to :user
 
-  validates :body, presence: true, uniqueness: true
+  validates :body, presence: true
 end
