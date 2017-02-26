@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     comment_params   = params.require(:comment).permit(:body)
     @comment         = Comment.new comment_params
     @post            = Post.find params[:post_id]
+
     @comment.post    = @post
     @comment.user = current_user
     @comments = Comment.where(post_id: params[:post_id])

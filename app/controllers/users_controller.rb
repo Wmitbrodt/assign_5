@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only:[:edit]
-  before_action :authorize, only: [:edit,:update]
+  before_action :authenticate_user!, only: [:edit]
+  before_action :authorize, only: [:edit, :update, :edit_password]
 
   def new
     @user = User.new
@@ -17,12 +17,17 @@ class UsersController < ApplicationController
    end
 
    def edit
-     @user = User.find params[:id]
+     user_params
    end
 
    def update
-     @user = User.find params[:id]
      user_params
+     params.require(:user).permit(:first_name,
+                                  :last_name,
+                                  :email,
+                                  :password,
+                                  :password_confirmation)
+
      if @user.update_attributes(user_params)
        flash.now[:success] = "Profile updated"
        redirect_to root_path
@@ -31,27 +36,33 @@ class UsersController < ApplicationController
     end
   end
 
-  # def change_password
-  #   # step 1: verify with user.authenticate, pass in params and current password
-  #   user = User.find_by_email params[:email]
-  #   if user&.authenticate(params[:password])
-  #   session[:user_id] = user.id
-  #   # step 2: make sure the new pass = to new_pass_confirmation (string comparison)
-  #
-  #   # step 3: simply user update to change pass field
-  # if @user.update_attributes(user_params)
-  #   flash.now[:success] = "Profile updated"
-  #   redirect_to root_path
-  # end
+  def edit_password
+    user_params
+  end
+
+  def update_password
+
+      user_params = params.require(:user).permit(:password,
+                                                 :password_confirmation)
+      @user = User.find params[:id]
+
+       if @user&.authenticate(params[:user][:current_password])
+           if @user.update user_params
+             session[:user_id] = @user.id
+             redirect_to root_path, notice: 'Your password was changed! Yay!'
+           else
+             render :edit
+           end
+       else
+         flash.now[:alert] = 'You enter the wrong password'
+         render :edit_password
+       end
+    end
 
      private
 
      def user_params
-       params.require(:user).permit(:first_name,
-                                    :last_name,
-                                    :email,
-                                    :password,
-                                    :password_confirmation)
+       @user = User.find params[:id]
      end
 
      def authorize

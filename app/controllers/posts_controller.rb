@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
+  before_action( :authorize, only: [:edit, :destroy, :update])
 
   def new
     @post = Post.new(created_at: :desc)
