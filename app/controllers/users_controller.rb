@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, only: [:edit, :destroy, :update]
   before_action :find_user, only: [:show, :edit, :destroy, :update, :edit_password]
   before_action :authorize, only: [:edit, :update, :edit_password]
 
