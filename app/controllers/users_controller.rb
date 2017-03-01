@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:edit]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :find_user, only: [:show, :edit, :destroy, :update, :edit_password]
   before_action :authorize, only: [:edit, :update, :edit_password]
 
   def new
@@ -7,6 +8,11 @@ class UsersController < ApplicationController
   end
 
   def create
+    user_params = params.require(:user).permit(:first_name,
+                                                 :last_name,
+                                                 :email,
+                                                 :password,
+                                                 :password_confirmation)
     @user = User.new user_params
       if @user.save
         session[:user_id] = @user.id
@@ -17,12 +23,11 @@ class UsersController < ApplicationController
    end
 
    def edit
-     user_params
+
    end
 
    def update
-     user_params
-     params.require(:user).permit(:first_name,
+     user_params = params.require(:user).permit(:first_name,
                                   :last_name,
                                   :email,
                                   :password,
@@ -37,13 +42,10 @@ class UsersController < ApplicationController
   end
 
   def edit_password
-    user_params
   end
 
   def update_password
-
-      user_params = params.require(:user).permit(:password,
-                                                 :password_confirmation)
+      password_params
       @user = User.find params[:id]
 
        if @user&.authenticate(params[:user][:current_password])
@@ -61,12 +63,16 @@ class UsersController < ApplicationController
 
      private
 
-     def user_params
+     def password_params
+       params.require(:user).permit(:password,
+                        :password_confirmation)
+     end
+
+     def find_user
        @user = User.find params[:id]
      end
 
      def authorize
-       @user = User.find params[:id]
        if cannot?(:manage, @user)
          redirect_to root_path,notice:'You can\'t edit another user!'
        end

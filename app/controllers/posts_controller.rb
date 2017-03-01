@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-  before_action( :authorize, only: [:edit, :destroy, :update])
+  before_action :find_post, only: [:show, :edit, :destroy, :update]
+  before_action :authorize, only: [:edit, :destroy, :update]
 
   def new
     @post = Post.new(created_at: :desc)
@@ -32,7 +33,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find params[:id]
   end
 
   def update
@@ -52,6 +52,10 @@ class PostsController < ApplicationController
   end
 
     private
+
+    def find_post
+      @post = Post.find params[:id]
+    end
 
     def authorize
       if cannot?(:manage, @post)
