@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'likes/create'
+
+  get 'likes/destroy'
+
   root 'posts#index'
 
   resources :categories
@@ -13,6 +17,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update] do
     get :edit_password, on: :member
     patch :update_password, on: :member
+    resources :likes, only: [:index]
   end
 
   resources :sessions, only: [:new, :create] do

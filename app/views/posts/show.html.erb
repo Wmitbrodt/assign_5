@@ -28,8 +28,17 @@
         </div> <!-- row --> <br>
         <div class="row">
           <div class="col-xs-8 col-sm-8 col-md-8">
-            <%= link_to "Like", post_likes_path(@post), method: :post %>
-            <%= link_to "Un-Like", post_likes_path(@post), method: :delete %>
+
+            <% if user_signed_in? && can?(:like, @post) %>
+              <% if @post.liked_by?(current_user) %>
+                <%= link_to "Un-Like", like_path(@post.like_for(current_user)), method: :delete %>
+              <% else %>
+                <%= link_to "Like", post_likes_path(@post), method: :post %>
+              <% end %>
+            <% end %>
+
+            (<%= pluralize @post.likes.count, 'like' %>)
+            
           </div>
         </div>
         <br>

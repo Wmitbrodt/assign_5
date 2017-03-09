@@ -22,6 +22,14 @@ class Ability
       u == user
     end
 
+    cannot :like, Post do |p|
+      user = p.user
+    end
+
+    can :like, Post do |p|
+      user != p.user
+    end
+
 
     # Define abilities for the passed in user here. For example:
     #
