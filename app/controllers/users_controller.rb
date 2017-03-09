@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :destroy, :update]
   before_action :find_user, only: [:show, :edit, :destroy, :update, :edit_password]
   before_action :authorize, only: [:edit, :update, :edit_password]
-
+  
   def new
     @user = User.new
   end
@@ -23,7 +23,6 @@ class UsersController < ApplicationController
    end
 
    def edit
-
    end
 
    def update

@@ -14,7 +14,6 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'font-awesome-sass', '~> 4.6', '>= 4.6.2'
@@ -23,6 +22,9 @@ gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails-erd'
 gem 'cancancan'
+gem 'animate-rails'
+gem 'wow-rails', '~> 0.0.1'
+gem 'jquery-easing-rails'
 
 gem 'rails_12factor', group: :production
 
