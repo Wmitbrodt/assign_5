@@ -166,17 +166,17 @@ border: none;
 }
 
 .navbar {
-  background-color: teal;
+  background: linear-gradient(to right, #6c83e9 0%, #5cb59b 100%);
   border-bottom: none;
   padding-top: 15px;
   padding-bottom: 8px;
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   @include transition(all 0.5s ease-in-out);
 }
 .navbar.scrolled {
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   background: teal;
-  background: linear-gradient(to right, teal 0%, blue 100%);
+  background: linear-gradient(to left, #6c83e9 0%, #5cb59b 100%);
   padding-top: 5px;
   padding-bottom: 0px;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='teal', endColorstr='blue', GradientType=1);

@@ -27,15 +27,24 @@
           </div> <!-- col -->
         </div> <!-- row --> <br>
         <div class="row">
-           <% if can?(:manage, @post) %>
-            <%= link_to 'Edit', edit_post_path(@post) %>
-            <%= link_to 'Delete', post_path(@post),
-                                  method: :delete,
-                                  data: { confirm: 'Are you sure?' } %>
-
-           <% end %>
+          <div class="col-xs-8 col-sm-8 col-md-8">
+            <%= link_to "Like", post_likes_path(@post), method: :post %>
+            <%= link_to "Un-Like", post_likes_path(@post), method: :delete %>
+          </div>
         </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-8 col-sm-8 col-md-8">
+             <% if can?(:manage, @post) %>
+              <%= link_to 'Edit', edit_post_path(@post) %>
+              <%= link_to 'Delete', post_path(@post),
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure?' } %>
 
+             <% end %>
+          </div>
+        </div>
+         <br>
         <div class="row">
          <div class="col-xs-4 col-sm-4">
            <div class="blog">
