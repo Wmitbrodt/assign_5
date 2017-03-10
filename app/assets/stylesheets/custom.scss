@@ -306,7 +306,7 @@ h5 {
     line-height: 1.4;
 }
 
-
+/* ICONS */
 .social:hover {
      -webkit-transform: scale(1.1);
      -moz-transform: scale(1.1);
@@ -342,6 +342,11 @@ h5 {
  #social-md:hover {
    color: $green;
  }
+
+ .fa-heart, .fa-heart-o {
+   color: $green;
+ }
+
 
 
 
@@ -395,7 +400,7 @@ Georgia,Cambria,"Times New Roman",Times,serif;
     background: linear-gradient(to right, #6c83e9 0%, #5cb59b 100%);
     color: #fff;
     font-size: 2em;
-
+    margin-top: 50px;
     letter-spacing: 4px;
     text-align: center;
     border: none;
