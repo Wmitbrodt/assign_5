@@ -51,7 +51,7 @@
               <li><%= link_to current_user.full_name, edit_user_path(current_user) %></li>
               <li><%= link_to 'Sign out', sessions_path, method: :delete %></li>
               <% else %>
-              <li>You're not signed in</li>
+              <li><a>You're not signed in</a></li>
               <li><%= link_to 'Sign up', new_user_path %></li>
               <li><%= link_to 'Sign in', new_session_path %></li>
             <% end %>

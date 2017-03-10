@@ -12,9 +12,13 @@
   <body>
 
     <%= render 'layouts/header' %>
-    <%= render 'layouts/show' unless current_page?(root_path) %> 
-    <div class="container">
+    <%= render 'layouts/show' unless current_page?(root_path) %>
 
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <%= content_tag :div, value, class: "alert alert-#{key}" %>
+      <% end %>
 
     <%= yield %>
 </div>

@@ -32,7 +32,7 @@ class LikesController < ApplicationController
 
     redirect_to(
       post_path(@like.post),
-      @like.destroy? { notice: 'Post Un-liked!' } : { alert: @like.errors.full_messages.join(',') }
+      @like.destroy ? { notice: 'Post Un-liked!' } : { alert: @like.errors.full_messages.join(',') }
     )
   end
 
@@ -43,7 +43,7 @@ class LikesController < ApplicationController
     end
 
     def find_post
-      @post ||= Post.find params[:id]
+      @post ||= Post.find(params[:post_id])
     end
 
 
