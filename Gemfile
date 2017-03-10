@@ -25,7 +25,6 @@ gem 'cancancan'
 gem 'animate-rails'
 gem 'wow-rails', '~> 0.0.1'
 gem 'jquery-easing-rails'
-
 gem 'rails_12factor', group: :production
 
 
