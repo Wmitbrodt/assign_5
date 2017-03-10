@@ -1,1 +1,12 @@
-<h1>Test email</h1>
+<h1>Hell <%= @owner.full_name %>,</h1>
+
+  <p>Wow! You have a new comment on your post: </p>
+    <br>
+  <p>Post title: <%= @post.title %></p>
+    <br>
+  <p>The Comment is: <%= @comment.body %></p>
+    <br>
+  <p><%= link_to 'Click here to view the comment', post_url(@post) %></p>
+  <p>Regards,</p>
+    <br>
+  <p>Will's Blog Team</p>

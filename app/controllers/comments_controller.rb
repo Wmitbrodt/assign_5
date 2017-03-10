@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
 
 
     if @comment.save
+      PostsMailer.notify_post_owner(@comment).deliver_later
       redirect_to post_path(params[:post_id]), notice: 'Comment was successfully created'
     else
       flash.now[:alert] = 'You need to fix errors'

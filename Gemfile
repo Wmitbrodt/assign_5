@@ -25,6 +25,11 @@ gem 'cancancan'
 gem 'animate-rails'
 gem 'wow-rails', '~> 0.0.1'
 gem 'jquery-easing-rails'
+gem 'delayed_job_active_record'
+gem 'delayed_job_web'
+gem 'sinatra', '2.0.0.beta2'
+
+
 gem 'rails_12factor', group: :production
 
 
@@ -41,6 +46,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
