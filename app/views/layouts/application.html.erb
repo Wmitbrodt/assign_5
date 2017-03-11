@@ -12,7 +12,8 @@
   <body>
 
     <%= render 'layouts/header' %>
-    <%= render 'layouts/show' unless current_page?(root_path) %>
+    <%#= render 'layouts/show' if current_page?(controller: 'posts', action: 'show')  %>
+    <%= render :partial => "layouts/show"  if controller_name == "posts" && action_name == "show" %>
 
 
     <div class="container">

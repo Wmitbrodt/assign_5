@@ -2,6 +2,6 @@
 
 <ul>
   <% @posts.each do |p| %>
-    <li><%= link_to p.title, p %></li>
+    <p>&#9658; <%= link_to p.title, p %></p>
   <% end %>
 </ul>

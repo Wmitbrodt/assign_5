@@ -48,6 +48,7 @@
               </div>
             </form> -->
             <% if user_signed_in? %>
+              <li><%= link_to 'Posts you like', user_likes_path(current_user) %></li>
               <li><%= link_to current_user.full_name, edit_user_path(current_user) %></li>
               <li><%= link_to 'Sign out', sessions_path, method: :delete %></li>
               <% else %>
