@@ -13,6 +13,7 @@ $body: #fafafa!important;
 $navbar: #fff;
 $medium: rgba(0,0,0,.8);
 
+
 @mixin transition($x) {
   -webkit-transition: $x;
   -moz-transition: $x;
