@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :posts, only: [:show, :index, :create]
+    end
+  end
+
   resources :categories
 
   resources :posts, shallow: true do

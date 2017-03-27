@@ -28,7 +28,7 @@ gem 'jquery-easing-rails'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 gem 'sinatra', '2.0.0.beta2'
-
+gem 'active_model_serializers'
 
 gem 'rails_12factor', group: :production
 
